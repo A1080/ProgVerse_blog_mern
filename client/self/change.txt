@@ -1,0 +1,14 @@
+1-the error is of something of promise internal server 500 caught in promise
+resolution steps-
+1-in user-controller.js there try and catch error i removed the async and await to the promise 
+error is resolved 
+2-then there is validation error comes in username field
+3-makes changes in the user-controller.js file add 'new' word in mongoose.schema and then add some validation things
+4-then duplicate value error comes 
+5-drop the entry with name Username_1
+
+
+-----
+ERROR 2: When i added hashing in the password then i got the error of same promise
+resolution step:
+1- i added the async and await in the user-controller.js file then it runs fine
