@@ -137,10 +137,10 @@ const Comments = ({ post }) => {
       </Container>
 
       <Box>
-        {comments.length > 0 &&
+        {/* {comments.length > 0 &&
           comments.map((comment) => (
             <Comment key={comment._id} comment={comment} setToggle={setToggle} />
-          ))}
+          ))} */}
       </Box>
     </Box>
   );
