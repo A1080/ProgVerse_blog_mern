@@ -26,11 +26,6 @@ export const uploadImage=(request,response)=>{
     response.status(200).json(imageUrl);
     // return response.status(200).json(imageUrl);
 
-    const statusCode = 200; 
-   const popupMessage = statusCode === 200 ? 'Image uploaded successfully!' : 'Error uploading image!';
-
-   alert(popupMessage);
-
 }
 
 export const getImage=async (request,response)=>{
