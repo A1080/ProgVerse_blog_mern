@@ -26,33 +26,10 @@ export const uploadImage=(request,response)=>{
     response.status(200).json(imageUrl);
     // return response.status(200).json(imageUrl);
 
-    const statusCode = response.statusCode; 
-    const popupMessage = statusCode === 200 ? 'Image uploaded successfully!' : 'Error uploading image!';
-    const popupStyle = `
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: ${statusCode === 200 ? 'green' : 'red'};
-      color: white;
-      font-weight: bold;
-    `;
-  
-    // Create a popup element
-    const popup = document.createElement('div');
-    popup.textContent = popupMessage;
-    popup.style.cssText = popupStyle;
-  
-    // Append the popup to the body
-    document.body.appendChild(popup);
-  
-    // Remove the popup after a few seconds (adjust the time according to your preference)
-    setTimeout(() => {
-      document.body.removeChild(popup);
-    }, 3000); 
+    const statusCode = 200; 
+   const popupMessage = statusCode === 200 ? 'Image uploaded successfully!' : 'Error uploading image!';
+
+   alert(popupMessage);
 
 }
 

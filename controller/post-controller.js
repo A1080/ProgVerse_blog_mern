@@ -6,6 +6,9 @@ export const createPost=async (request,response)=>{
     try {
         const post=await new Post(request.body);
         post.save();
+        const statusCode = 200; 
+        const popupMessage = statusCode === 200 ? 'Post Created successfully!' : 'Error uploading Post!';
+        alert(popupMessage);
         return response.status(200).json('Post saved successfully');
     } catch (error) {
         return response.status(500).json(error);
