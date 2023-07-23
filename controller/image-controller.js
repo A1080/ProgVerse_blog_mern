@@ -1,6 +1,6 @@
 import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
-const url='';
+const url='https://prog-verse-blog.vercel.app';
 // const url='http://localhost:8000';
 
 

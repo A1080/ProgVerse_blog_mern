@@ -6,6 +6,8 @@ import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../../../context/DataProvider";
 import { API } from "../../../service/api";
 import Comment from "./Comment";
+import axios from "axios";
+// import { useParams} from "react-router-dom";
 
 const Container = styled(Box)`
   margin-top: 30px;
@@ -57,6 +59,7 @@ const initialValues = {
 
 const Comments = ({ post }) => {
   const [comment, setComment] = useState(initialValues);
+  // const {id}=useParams();
   const [comments, setComments] = useState([]);
   const [toggle, setToggle] = useState(false);
   const { account } = useContext(DataContext);
@@ -65,15 +68,16 @@ const Comments = ({ post }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        // const response = await API.getAllComments(post._id);
+        // const response = await API.getAllComments(id);
+        console.log(post);
         let response;
-        console.log(post._id);
         if(post?._id!=null){
           response = await API.getAllComments(post._id);
         }
+        // const response = await axios.get("/comments/" + post._id);
         console.log(response);
-        if (response?.isSuccess) {
-          setComments(response?.data);
+        if (response.isSuccess) {
+          setComments(response.data);
         }
       } catch (error) {
         console.error('Error fetching comments:', error);
