@@ -83,6 +83,7 @@ const CreatePost = () => {
 
         // API CALL
         const response = await API.uploadFile(data);
+        console.log(response.status);
         post.picture = response.data;
       }
     };
